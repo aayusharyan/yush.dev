@@ -213,7 +213,7 @@ let edu = [];
   edu.push(new Education("Udacity", "Android Developer Nanodegree", "2018-2018"));
   edu.push(new Education("Pune University", "B.E. (Computer Science)", "2015-2019"));
   edu.push(new Education("ICSE", "High School and Intermediate", "2012-2015"));
-  console.log('Education:')
+  console.log('Education:');
   console.table(edu);
   let tagStyle = 'font-size: 20px; color: #FFFFFF; background-color: #6C757D; padding: 2px 10px 0px 10px; border-radius: 5px; margin: 5px 0px;';
   let noStyle  = '';
