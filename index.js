@@ -184,7 +184,7 @@ function render(a) {
     let t1 = 0;
     if(!isTested) {
         t1 = performance.now();
-        if(t1-t0>5) {
+        if(t1-t0>15) {
             slowBrowser = true;
             browserIsSlow();
         }
