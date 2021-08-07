@@ -22,8 +22,8 @@ else if(ww <= 1440) { radius = 75;  }
 else if(ww <= 2048) { radius = 100; }
 
 //Main Particle Class
-class Particle {
-    constructor(x, y) {
+//Cannot use class because IE does not support that. 🤦🏻‍♂️
+function Particle(x, y) {
         this.x    = Math.random() * canvas.width;
         this.y    = Math.random() * canvas.height;
         this.vx   = (Math.random() - 0.5) * 10;
@@ -64,8 +64,9 @@ class Particle {
         this.color = colors[Math.floor(Math.random() * 4)];
     }
 
+
     //Rended method
-    render() {
+    Particle.prototype.render = function() {
         this.accX = (this.dest.x - this.x) / 100;
         this.accY = (this.dest.y - this.y) / 100;
         if(slowBrowser) {
@@ -100,7 +101,6 @@ class Particle {
         }
 
     }
-}
 
 
 //Change mouse pointers on mouse movement
@@ -232,8 +232,7 @@ requestAnimationFrame(render);
 
 
 //Add some fun messages to Console.
-class workExperience {
-    constructor(role, companyName, dates, work) {
+function workExperience() {
         this['1. Sr. Engineer @ KEMURI Technology'] = {
             "2017-Present": [
                 "Worked on building a CMS with Multi national clientbase including owning E2E functionality of modules such as SSO, GCS, etc.",
@@ -276,15 +275,18 @@ class workExperience {
             ],
         };
     }
-}
 
-class Education {
-constructor(collegeName, degree, dates) {
+function Education(collegeName, degree, dates) {
     this.collegeName = collegeName;
     this.degree = degree;
     this.dates = dates;
 }
+
+if(!console.table) {
+    throw new Error('This is probably Internet Explorer and the magic I am trying to do here is just isn\'t supported by it, try using Chrome, Firefox or any other Chromium based browser');
 }
+
+
 console.log("%cHi👋🏻", "font-size: 48px;");
 console.log("%cHice to meet you in this back alley.", "font-size: 24px;");
 console.log('\n');
@@ -301,8 +303,10 @@ let edu = [];
   edu.push(new Education("Udacity", "Android Developer Nanodegree", "2018-2018"));
   edu.push(new Education("Pune University", "B.E. (Computer Science)", "2015-2019"));
   edu.push(new Education("ICSE", "High School and Intermediate", "2012-2015"));
+  
   console.log('Education:');
-  console.table(edu);
+    console.table(edu);
+  
   let tagStyle = 'font-size: 20px; color: #FFFFFF; background-color: #6C757D; padding: 2px 10px 0px 10px; border-radius: 5px; margin: 5px 0px;';
   let noStyle  = '';
 
@@ -310,24 +314,24 @@ let edu = [];
   tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle);
 
   console.log('\n');
-  console.log('%c(Note: There is an image below which might not work in non-modern browsers)', 'font-size: 16px; color: orange');
+  console.log('%c(Note: There is an image below which might not work in non-chromium browsers)', 'font-size: 16px; color: orange');
   console.image("https://raw.githubusercontent.com/aayusharyan/yush.dev/main/not_sure.jpg");
 
 
-
-document.getElementById('sendEmail').onclick = () => {
+//Daamn, cannot even use Arrow functions in IE.
+document.getElementById('sendEmail').onclick = function() {
     window.open("mailto:aayush.aryan@me.com");
 }
-document.getElementById('viewLinkedin').onclick = () => {
+document.getElementById('viewLinkedin').onclick = function() {
     window.open('https://www.linkedin.com/in/aayushsinha');
 }
-document.getElementById('viewGithub').onclick = () => {
+document.getElementById('viewGithub').onclick = function() {
     window.open('https://github.com/aayusharyan/yush.dev');
 }
-document.getElementById('viewMainSite').onclick = () => {
+document.getElementById('viewMainSite').onclick = function() {
     window.open('https://aayushsinha.com');
 }
-document.getElementById('downloadResume').onclick = () => {
+document.getElementById('downloadResume').onclick = function() {
     window.open('https://aayushsinha.com/resume');
 }
 
