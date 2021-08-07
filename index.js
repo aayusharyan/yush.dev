@@ -318,6 +318,18 @@ let edu = [];
 document.getElementById('sendEmail').onclick = () => {
     window.open("mailto:aayush.aryan@me.com");
 }
-document.getElementById('viewProfile').onclick = () => {
+document.getElementById('viewLinkedin').onclick = () => {
     window.open('https://www.linkedin.com/in/aayushsinha');
 }
+document.getElementById('viewGithub').onclick = () => {
+    window.open('https://github.com/aayusharyan/yush.dev');
+}
+document.getElementById('viewMainSite').onclick = () => {
+    window.open('https://aayushsinha.com');
+}
+document.getElementById('downloadResume').onclick = () => {
+    window.open('https://aayushsinha.com/resume');
+}
+
+
+
