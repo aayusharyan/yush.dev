@@ -233,48 +233,48 @@ requestAnimationFrame(render);
 
 //Add some fun messages to Console.
 function workExperience() {
-        this['1. Sr. Engineer @ KEMURI Technology'] = {
-            "2017-Present": [
-                "Worked on building a CMS with Multi national clientbase including owning E2E functionality of modules such as SSO, GCS, etc.",
-                "Worked on implementing client custom requirements on top our main product",
-                "Handled a multiverse of things from APIs to Auth Codes",
-                "Even worked on Development of iOS Application and Deep Learning models for Cancer Detection in Brain 🧠",
-                "Now moving to headless and working on explsing API for our B2B clients."
-            ],
-        };
-        this['2. Instrucor and Mentor @ Newton School'] = {
-            "2021-Present": [
-                "Teach and Mentor students on the MERN Stack.",
-                "Helped many students in getting a job!",
-                "Some of them were not even from a CS background"
-            ],
-        };
-        this['3. Mentor @ Udacity'] = {
-            "2019-2020": [
-                "Mentored students for the Android Development Nanodegree",
-                "Guided them with the projects",
-                "Helped them understand the concepts well",
-            ],
-        };
-        this['4. FullStack Web Developer @ EKutur'] = {
-            "2017-2018": [
-                "Worked on an E-commerce platform built on custom PHP",
-                "Brought it up to the trends with respect to Security, UI/UX, even coding standards",
-                "Added functionalities like OTP Based Account Verification, On hold orders, integrated delivery statuses, etc",
-            ],
-        };
-        this['5. Web Developer Internship @ Bike Street Boys'] = {
-            "2016-2017": [
-                "Worked on Developing website on Shopify",
-                "Customized the templates, Oh those liquid files. 💧",
-            ],
-        };
-        this['6. Web Developer Intern @ Offstep'] = {
-            "2016-2016": [
-                "Singlehandedly developed the complete frontend of the website and the platform (including UI/UX)",
-            ],
-        };
-    }
+    this['1. Sr. Engineer @ KEMURI Technology'] = {
+        "2017-Present": [
+            "Worked on building a CMS with Multi national clientbase including owning E2E functionality of modules such as SSO, GCS, etc.",
+            "Worked on implementing client custom requirements on top our main product",
+            "Handled a multiverse of things from APIs to Auth Codes",
+            "Even worked on Development of iOS Application and Deep Learning models for Cancer Detection in Brain 🧠",
+            "Now moving to headless and working on explsing API for our B2B clients."
+        ],
+    };
+    this['2. Instrucor and Mentor @ Newton School'] = {
+        "2021-Present": [
+            "Teach and Mentor students on the MERN Stack.",
+            "Helped many students in getting a job!",
+            "Some of them were not even from a CS background"
+        ],
+    };
+    this['3. Mentor @ Udacity'] = {
+        "2019-2020": [
+            "Mentored students for the Android Development Nanodegree",
+            "Guided them with the projects",
+            "Helped them understand the concepts well",
+        ],
+    };
+    this['4. FullStack Web Developer @ EKutur'] = {
+        "2017-2018": [
+            "Worked on an E-commerce platform built on custom PHP",
+            "Brought it up to the trends with respect to Security, UI/UX, even coding standards",
+            "Added functionalities like OTP Based Account Verification, On hold orders, integrated delivery statuses, etc",
+        ],
+    };
+    this['5. Web Developer Internship @ Bike Street Boys'] = {
+        "2016-2017": [
+            "Worked on Developing website on Shopify",
+            "Customized the templates, Oh those liquid files. 💧",
+        ],
+    };
+    this['6. Web Developer Intern @ Offstep'] = {
+        "2016-2016": [
+            "Singlehandedly developed the complete frontend of the website and the platform (including UI/UX)",
+        ],
+    };
+}
 
 function Education(collegeName, degree, dates) {
     this.collegeName = collegeName;
@@ -283,7 +283,7 @@ function Education(collegeName, degree, dates) {
 }
 
 if(!console.table) {
-    throw new Error('This is probably Internet Explorer and the magic I am trying to do here is just isn\'t supported by it, try using Chrome, Firefox or any other Chromium based browser');
+    throw new Error('This is probably Internet Explorer and the magic I am trying to do here just isn\'t supported by it, try using Chrome, Firefox or any other Chromium based browser');
 }
 
 
@@ -297,25 +297,24 @@ console.log('\n\n');
 
 
 let edu = [];
+edu.push(new Education("BITS Pilani", "M.Tech (Security)", "2019-Present"));
+edu.push(new Education("Udacity", "Deep Learning Nanodegree", "2018-2018"));
+edu.push(new Education("Udacity", "Android Developer Nanodegree", "2018-2018"));
+edu.push(new Education("Pune University", "B.E. (Computer Science)", "2015-2019"));
+edu.push(new Education("ICSE", "High School and Intermediate", "2012-2015"));
   
-  edu.push(new Education("BITS Pilani", "M.Tech (Security)", "2019-Present"));
-  edu.push(new Education("Udacity", "Deep Learning Nanodegree", "2018-2018"));
-  edu.push(new Education("Udacity", "Android Developer Nanodegree", "2018-2018"));
-  edu.push(new Education("Pune University", "B.E. (Computer Science)", "2015-2019"));
-  edu.push(new Education("ICSE", "High School and Intermediate", "2012-2015"));
+console.log('Education:');
+console.table(edu);
   
-  console.log('Education:');
-    console.table(edu);
-  
-  let tagStyle = 'font-size: 20px; color: #FFFFFF; background-color: #6C757D; padding: 2px 10px 0px 10px; border-radius: 5px; margin: 5px 0px;';
-  let noStyle  = '';
+let tagStyle = 'font-size: 20px; color: #FFFFFF; background-color: #6C757D; padding: 2px 10px 0px 10px; border-radius: 5px; margin: 5px 0px;';
+let noStyle  = '';
 
-  console.log('\n%cTech Stack\n\n%cDSA%c  %cJava%c  %cPHP%c  %cNodeJS%c  %cHTML/CSS/JS%c  %cReactJS + VueJS%c  %cAndroid%c  %cMongoDB%c  %cFirebase%c  %cAWS + GCP%c  %cPostgreSQL%c  %cmySQL + SQLite', 'font-size: 30px; color: green', 
-  tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle);
+console.log('\n%cTech Stack\n\n%cDSA%c  %cJava%c  %cPHP%c  %cNodeJS%c  %cHTML/CSS/JS%c  %cReactJS + VueJS%c  %cAndroid%c  %cMongoDB%c  %cFirebase%c  %cAWS + GCP%c  %cPostgreSQL%c  %cmySQL + SQLite', 'font-size: 30px; color: green', 
+tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle);
 
-  console.log('\n');
-  console.log('%c(Note: There is an image below which might not work in non-chromium browsers)', 'font-size: 16px; color: orange');
-  console.image("https://raw.githubusercontent.com/aayusharyan/yush.dev/main/not_sure.jpg");
+console.log('\n');
+console.log('%c(Note: There is an image below which might not work in non-chromium browsers)', 'font-size: 16px; color: orange');
+console.image("https://raw.githubusercontent.com/aayusharyan/yush.dev/main/not_sure.jpg");
 
 
 //Daamn, cannot even use Arrow functions in IE.
