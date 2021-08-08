@@ -9,7 +9,7 @@ let ctx         = canvas.getContext("2d");
 let particles   = [];
 let amount      = 0;
 let mouse       = {x: -9999, y: -9999};
-let colors      = ["#695aa6","#444444", "#9370DB","#BA55D3"];
+let colors      = ["#695AA6","#444444", "#9370DB","#BA55D3"];
 let text        = "< Aayush Sinha />";
 
 let radius      = 150;
@@ -230,6 +230,22 @@ initScene();
 requestAnimationFrame(render);
 
 
+//Daamn, cannot even use Arrow functions in IE.
+document.getElementById('sendEmail').onclick = function() {
+    window.open("mailto:aayush.aryan@me.com");
+}
+document.getElementById('viewLinkedin').onclick = function() {
+    window.open('https://www.linkedin.com/in/aayushsinha');
+}
+document.getElementById('viewGithub').onclick = function() {
+    window.open('https://github.com/aayusharyan/yush.dev');
+}
+document.getElementById('viewMainSite').onclick = function() {
+    window.open('https://aayushsinha.com');
+}
+document.getElementById('downloadResume').onclick = function() {
+    window.open('https://aayushsinha.com/resume');
+}
 
 
 if(!console.table) {
@@ -315,21 +331,3 @@ tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagS
 console.log('\n');
 console.log('%c(Note: There is an image below which might not work in non-chromium browsers)', 'font-size: 16px; color: orange');
 console.image("https://yush.dev/assets/images/not_sure.jpg");
-
-
-//Daamn, cannot even use Arrow functions in IE.
-document.getElementById('sendEmail').onclick = function() {
-    window.open("mailto:aayush.aryan@me.com");
-}
-document.getElementById('viewLinkedin').onclick = function() {
-    window.open('https://www.linkedin.com/in/aayushsinha');
-}
-document.getElementById('viewGithub').onclick = function() {
-    window.open('https://github.com/aayusharyan/yush.dev');
-}
-document.getElementById('viewMainSite').onclick = function() {
-    window.open('https://aayushsinha.com');
-}
-document.getElementById('downloadResume').onclick = function() {
-    window.open('https://aayushsinha.com/resume');
-}
