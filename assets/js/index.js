@@ -24,83 +24,82 @@ else if(ww <= 2048) { radius = 100; }
 //Main Particle Class
 //Cannot use class because IE does not support that. 🤦🏻‍♂️
 function Particle(x, y) {
-        this.x    = Math.random() * canvas.width;
-        this.y    = Math.random() * canvas.height;
-        this.vx   = (Math.random() - 0.5) * 10;
-        this.vy   = (Math.random() - 0.5) * 10;
-        let rand  = Math.random();
-        this.dest = {x: x, y: y};
+    this.x    = Math.random() * canvas.width;
+    this.y    = Math.random() * canvas.height;
+    this.vx   = (Math.random() - 0.5) * 10;
+    this.vy   = (Math.random() - 0.5) * 10;
+    let rand  = Math.random();
+    this.dest = {x: x, y: y};
         
-        //Condition for Responsiveness
-        if (ww <= 425) {
-            this.r = 1;
-        } else if (ww <= 1024) {
-            this.r = rand + 2;
-        } else if (ww <= 2048) {
-            this.r = (rand * 3) + 3;
-        } else {
-            this.r = (rand * 4) + 6;
-        }
-
-        if(slowBrowser) {
-            if (ww <= 2048) {
-                this.r = 1;
-            } else if(ww <= 3000) {
-                this.r = (rand * 1) + 2;
-            } else {
-                this.r = (rand * 2) + 2;
-            }
-            
-        }
-        
-
-        this.accX = 0;
-        this.accY = 0;
-        this.friction = Math.random() * 0.05 + 0.9;
-        if(slowBrowser) {
-            this.friction /= 1.1;
-        }
-
-        this.color = colors[Math.floor(Math.random() * 4)];
+    //Condition for Responsiveness
+    if (ww <= 425) {
+        this.r = 1;
+    } else if (ww <= 1024) {
+        this.r = rand + 2;
+    } else if (ww <= 2048) {
+        this.r = (rand * 3) + 3;
+    } else {
+        this.r = (rand * 4) + 6;
     }
 
+    if(slowBrowser) {
+        if (ww <= 2048) {
+            this.r = 1;
+        } else if(ww <= 3000) {
+            this.r = (rand * 1) + 2;
+        } else {
+            this.r = (rand * 2) + 2;
+        }        
+    }
+        
 
-    //Rended method
-    Particle.prototype.render = function() {
-        this.accX = (this.dest.x - this.x) / 100;
-        this.accY = (this.dest.y - this.y) / 100;
+    this.accX = 0;
+    this.accY = 0;
+    this.friction = Math.random() * 0.05 + 0.9;
+    if(slowBrowser) {
+        this.friction /= 1.1;
+    }
+
+    this.color = colors[Math.floor(Math.random() * 4)];
+}
+
+
+//Rended method
+Particle.prototype.render = function() {
+    this.accX = (this.dest.x - this.x) / 100;
+    this.accY = (this.dest.y - this.y) / 100;
+    if(slowBrowser) {
+        this.accX *= 8;
+        this.accY *= 8;
+    }
+    this.vx  += this.accX;
+    this.vy  += this.accY;
+    this.vx  *= this.friction;
+    this.vy  *= this.friction;
+    this.x   += this.vx;
+    this.y   += this.vy;
+
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(Math.floor(this.x), Math.floor(this.y), Math.floor(this.r), Math.PI * 2, false);
+    ctx.fill();
+
+    //Exploding logic on Mouse Move
+    let a = this.x - mouse.x;
+    let b = this.y - mouse.y;
+    var distance  = Math.sqrt(a * a + b * b);
+    if (distance  < (radius)) {
+        this.accX = (this.x - mouse.x) / 10;
+        this.accY = (this.y - mouse.y) / 10;
         if(slowBrowser) {
-            this.accX *= 8;
-            this.accY *= 8;
+            this.accX *= 4;
+            this.accY *= 4;
         }
         this.vx  += this.accX;
         this.vy  += this.accY;
-        this.vx  *= this.friction;
-        this.vy  *= this.friction;
-        this.x   += this.vx;
-        this.y   += this.vy;
-
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(Math.floor(this.x), Math.floor(this.y), Math.floor(this.r), Math.PI * 2, false);
-        ctx.fill();
-
-        //Exploding logic on Mouse Move
-        let a = this.x - mouse.x;
-        let b = this.y - mouse.y;
-        var distance  = Math.sqrt(a * a + b * b);
-        if (distance  < (radius)) {
-            this.accX = (this.x - mouse.x) / 10;
-            this.accY = (this.y - mouse.y) / 10;
-            if(slowBrowser) {
-                this.accX *= 4;
-                this.accY *= 4;
-            }
-            this.vx  += this.accX;
-            this.vy  += this.accY;
-        }
-
     }
+
+}
 
 
 //Change mouse pointers on mouse movement
@@ -231,6 +230,12 @@ initScene();
 requestAnimationFrame(render);
 
 
+
+
+if(!console.table) {
+    throw new Error('This is probably Internet Explorer and the magic I am trying to do here just isn\'t supported by it, try using Chrome, Firefox or any other Chromium based browser');
+}
+
 //Add some fun messages to Console.
 function workExperience() {
     this['1. Sr. Engineer @ KEMURI Technology'] = {
@@ -282,11 +287,6 @@ function Education(collegeName, degree, dates) {
     this.dates = dates;
 }
 
-if(!console.table) {
-    throw new Error('This is probably Internet Explorer and the magic I am trying to do here just isn\'t supported by it, try using Chrome, Firefox or any other Chromium based browser');
-}
-
-
 console.log("%cHi👋🏻", "font-size: 48px;");
 console.log("%cHice to meet you in this back alley.", "font-size: 24px;");
 console.log('\n');
@@ -314,7 +314,7 @@ tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagStyle, noStyle, tagS
 
 console.log('\n');
 console.log('%c(Note: There is an image below which might not work in non-chromium browsers)', 'font-size: 16px; color: orange');
-console.image("https://raw.githubusercontent.com/aayusharyan/yush.dev/main/not_sure.jpg");
+console.image("https://yush.dev/assets/images/not_sure.jpg");
 
 
 //Daamn, cannot even use Arrow functions in IE.
@@ -333,6 +333,3 @@ document.getElementById('viewMainSite').onclick = function() {
 document.getElementById('downloadResume').onclick = function() {
     window.open('https://aayushsinha.com/resume');
 }
-
-
-
