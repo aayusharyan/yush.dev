@@ -1,6 +1,6 @@
-<a href="https://yush.dev"><img src="https://yush.dev/assets/images/site_ss.png" width="2400px"/></a>
+<a href="https://yush.dev"><img src="https://yush.dev/assets/images/site_ss_cropped.png" width="2400px"/></a>
 
-# yush.dev | Landing page for Aayush Sinha
+# yush.dev | Landing page
 
 ![Website](https://img.shields.io/website?down_color=Red&down_message=Offline&label=Online%20Status&logo=Serverless&logoColor=white&up_color=Green&up_message=Onine&url=https%3A%2F%2Fyush.dev)
 
