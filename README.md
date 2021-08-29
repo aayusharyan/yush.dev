@@ -5,7 +5,7 @@
 ![Website](https://img.shields.io/website?down_color=red&down_message=Offline&label=Online%20Status&logo=Serverless&logoColor=white&up_color=green&up_message=Onine&url=https%3A%2F%2Fyush.dev)
 
 
-Didn't come from the Website, I suggest go check out the website [https://yush.dev](https://yush.dev). Visited? Cool. Now go back to that website and open your Developer console, you can use the shortcut **Option + ⌘ + J** (on macOS), or **Shift + CTRL + J** (on Windows/Linux) on that site and maybe that will impress you.
+Didn't come from the Website, I suggest go check out the website [https://yush.dev](https://yush.dev). Visited? Cool. Now go back to that website and open your Developer console, you can use the shortcut <kbd>Option</kbd> + <kbd>⌘</kbd> + <kbd>J</kbd> (on macOS), or <kbd>Shift</kbd> + <kbd>CTRL</kbd> + <kbd>J</kbd> (on Windows/Linux) on that site and maybe that will impress you.
 
 Anyway, here are some things you might want to do next.
 
