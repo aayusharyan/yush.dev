@@ -15,9 +15,9 @@ let text        = "< Aayush Sinha />";
 let radius      = 150;
 //Conditions for Responsiveness
 if(ww <= 320)       { radius = 15;  }
-else if(ww <= 375)  { radius = 20;  } 
-else if(ww <= 768)  { radius = 40;  } 
-else if(ww <= 1024) { radius = 50;  }  
+else if(ww <= 375)  { radius = 20;  }
+else if(ww <= 768)  { radius = 40;  }
+else if(ww <= 1024) { radius = 50;  }
 else if(ww <= 1440) { radius = 75;  }
 else if(ww <= 2048) { radius = 100; }
 
@@ -30,7 +30,7 @@ function Particle(x, y) {
     this.vy   = (Math.random() - 0.5) * 10;
     let rand  = Math.random();
     this.dest = {x: x, y: y};
-        
+
     //Condition for Responsiveness
     if (ww <= 425) {
         this.r = 1;
@@ -49,9 +49,9 @@ function Particle(x, y) {
             this.r = (rand * 1) + 2;
         } else {
             this.r = (rand * 2) + 2;
-        }        
+        }
     }
-        
+
 
     this.accX = 0;
     this.accY = 0;
@@ -140,7 +140,7 @@ function initScene(){
     } else {
         canvas.width = ww;
         canvas.height = wh;
-    }    
+    }
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -174,7 +174,7 @@ function render(a) {
     if(!isTested) {
         t0 = performance.now();
     }
-    
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (var i = 0; i < amount; i++) {
         particles[i].render();
@@ -189,8 +189,8 @@ function render(a) {
         }
         isTested = true;
     }
-        
-    
+
+
 };
 
 function browserIsSlow() {
@@ -209,9 +209,9 @@ function browserIsSlow() {
 
         //Conditions for Responsiveness
         if(ww <= 320)       { radius = 25/(scaleToFit*2);  }
-        else if(ww <= 375)  { radius = 20/(scaleToFit*2);  } 
-        else if(ww <= 768)  { radius = 60/(scaleToFit*2);  } 
-        else if(ww <= 1024) { radius = 80/(scaleToFit*2);  }  
+        else if(ww <= 375)  { radius = 20/(scaleToFit*2);  }
+        else if(ww <= 768)  { radius = 60/(scaleToFit*2);  }
+        else if(ww <= 1024) { radius = 80/(scaleToFit*2);  }
         else if(ww <= 1440) { radius = 100/(scaleToFit*2); }
         else if(ww <= 2048) { radius = 140/(scaleToFit*2); }
 
