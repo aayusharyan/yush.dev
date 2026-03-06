@@ -5,7 +5,7 @@
 
 FROM nginx:alpine
 
-LABEL version="1.0.0"
+LABEL version="1.1.0"
 
 RUN rm /etc/nginx/conf.d/default.conf
 
