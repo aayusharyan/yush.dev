@@ -4,5 +4,5 @@ docker
 !docker/nginx.conf
 Dockerfile
 .dockerignore
-README.md
 *.md
+LICENSE
