@@ -1,17 +1,47 @@
-<a href="https://yush.dev"><img src="https://yush.dev/assets/images/site_ss_cropped.png" width="2400px"/></a>
+<a href="https://yush.dev"><img src=".github/header.png" width="2400px"/></a>
 
 # yush.dev | Landing page
 
 ![Website](https://img.shields.io/website?down_color=red&down_message=Offline&label=Online%20Status&logo=Serverless&logoColor=white&up_color=green&up_message=Onine&url=https%3A%2F%2Fyush.dev)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Didn't come from the Website, I suggest go check out the website [https://yush.dev](https://yush.dev). Visited? Cool. Now go back to that website and open your Developer console, you can use the shortcut <kbd>Option</kbd>+<kbd>⌘</kbd>+<kbd>J</kbd> (on macOS), or <kbd>Shift</kbd>+<kbd>CTRL</kbd>+<kbd>J</kbd> (on Windows/Linux) on that site and maybe that will impress you.
 
 Anyway, here are some things you might want to do next.
 
+## Project Structure
+
+```
+├── src/                  # Website source files
+│   ├── index.html        # Landing page
+│   ├── connect.html      # LinkedIn redirect
+│   ├── privacy/          # Privacy policy page
+│   └── assets/           # Static assets
+│       ├── css/
+│       ├── js/
+│       ├── fonts/
+│       └── images/
+├── docker/               # Docker and Nginx config
+│   ├── Dockerfile
+│   └── nginx.conf
+├── .github/              # GitHub Actions workflows
+├── LICENSE               # MIT License
+├── CONTRIBUTING.md       # Contribution guidelines
+└── SECURITY.md           # Security policy
+```
+
 ## Get the Particle Text JS so you can use it on your site
 
 The library I am using is called `particleText.js` and it can be found on [this GitHub Repository](https://github.com/aayusharyan/particleText.js). Please note, it is heavily under beta and might need some time before it is production ready. But I am trying to speed up the process (specially on Weekends). Feel free to contribute.
+
+## Running Locally
+
+Open `src/index.html` directly in a browser, or use Docker:
+
+```bash
+docker build -f docker/Dockerfile -t yush-dev .
+docker run -p 8080:80 yush-dev
+```
 
 ## Reach out to me
 
@@ -29,6 +59,10 @@ I have tried to support and optimize this on many browsers including Internet Ex
 
 > **ProTip:** It will be really helpful if you can also share the device information like the OS/Processor/GPU/RAM, etc.
 
+## Contributing
+
+Bug fixes and approved features only — see [CONTRIBUTING.md](CONTRIBUTING.md) for details. Please open an issue before submitting a PR.
+
 ## Stack used to make this website.
 
 - HTML/CSS/JS (All Vanilla).
@@ -38,5 +72,10 @@ I have tried to support and optimize this on many browsers including Internet Ex
 - Google Domains.
 - A lot of :heart:
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
 ---
+
 <p align="center">That's all folks!</p>
