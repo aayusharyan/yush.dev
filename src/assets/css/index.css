@@ -32,7 +32,7 @@ p > span:not(#slowBrowserMessage){
 [tooltip] {
     position: relative;
 }
-  
+
 [tooltip]::before,
 [tooltip]::after {
   text-transform: none;
@@ -51,10 +51,10 @@ p > span:not(#slowBrowserMessage){
 }
 [tooltip]::after {
     content: attr(tooltip);
-    
+
     font-family: Helvetica, sans-serif;
     text-align: center;
-    
+
     min-width: 3em;
     max-width: 21em;
     white-space: nowrap;
@@ -72,12 +72,12 @@ p > span:not(#slowBrowserMessage){
 [tooltip]:hover::after {
     display: block;
 }
-  
+
 [tooltip='']::before,
 [tooltip='']::after {
     display: none !important;
 }
-  
+
 [tooltip]:not([flow])::before,
 [tooltip][flow^="up"]::before {
     bottom: 100%;
@@ -95,7 +95,7 @@ p > span:not(#slowBrowserMessage){
     left: 50%;
     transform: translate(-50%, -.5em);
 }
-  
+
 [tooltip][flow^="down"]::before {
     top: 100%;
     border-top-width: 0;
@@ -109,7 +109,7 @@ p > span:not(#slowBrowserMessage){
     left: 50%;
     transform: translate(-50%, .5em);
 }
-  
+
 [tooltip][flow^="left"]::before {
     top: 50%;
     border-right-width: 0;
@@ -122,7 +122,7 @@ p > span:not(#slowBrowserMessage){
     right: calc(100% + 5px);
     transform: translate(-.5em, -50%);
 }
-  
+
 [tooltip][flow^="right"]::before {
     top: 50%;
     border-left-width: 0;
@@ -135,21 +135,21 @@ p > span:not(#slowBrowserMessage){
     left: calc(100% + 5px);
     transform: translate(.5em, -50%);
 }
-  
+
 @keyframes tooltips-vert {
     to {
         opacity: .9;
         transform: translate(-50%, 0);
     }
 }
-  
+
 @keyframes tooltips-horz {
     to {
         opacity: .9;
         transform: translate(0, -50%);
     }
 }
-  
+
 [tooltip]:not([flow]):hover::before,
 [tooltip]:not([flow]):hover::after,
 [tooltip][flow^="up"]:hover::before,
@@ -158,7 +158,7 @@ p > span:not(#slowBrowserMessage){
 [tooltip][flow^="down"]:hover::after {
     animation: tooltips-vert 300ms ease-out forwards;
 }
-  
+
 [tooltip][flow^="left"]:hover::before,
 [tooltip][flow^="left"]:hover::after,
 [tooltip][flow^="right"]:hover::before,
